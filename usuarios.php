@@ -1,3 +1,7 @@
+<?php require_once('inc/classes.php'); include_once('class/Conexao.php'); 
+      $Usuario = new Usuario();
+      print_r($Usuario->listar());
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 

@@ -1,3 +1,4 @@
+<?php require_once('inc/classes.php'); include_once('class/Conexao.php'); ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
