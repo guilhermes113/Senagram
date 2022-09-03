@@ -23,8 +23,6 @@ class Usuario extends Conexao
       // retornar os dados
       return $sql->fetchAll(PDO::FETCH_OBJ);
    }
-
-
    public function cadastrar(array $dados = null)
    {
       $sql = $this->pdo->prepare(
@@ -48,7 +46,7 @@ class Usuario extends Conexao
 
       return $this->pdo->lastInsertId();
    }
-   public function Atualizar(array $dados)
+   public function atualizar(array $dados)
    {
       $sql = $this->pdo->prepare("UPDATE usuarios SET nome=:nome,email=:email,senha=:senha WHERE id_usuario = :id_usuario LIMIT 1");
       // TRATAR OS DADOS
@@ -64,12 +62,19 @@ class Usuario extends Conexao
       // EXECUTAR
       $sql->execute();
    }
-   public function Deletar(int $id_usuario)
+   public function deletar(int $id_usuario)
    {
       $sql = $this->pdo->prepare("DELETE FROM usuarios WHERE id_usuario =:id_usuario");
       $sql->bindParam(':id_usuario',$id_usuario);
       $sql->execute();
-      # code...
    }
-   
+   public function mostar(int $id_usuario)
+   {
+      $sql = $this->pdo->prepare("SELECT * FROM usuarios WHERE id_usuario = :id_usuario");
+      $sql->bindParam(':id_usuario',$id_usuario);
+      $sql->execute();
+      return $sql->fetch(PDO::FETCH_OBJ);
+      
+   }
+
 }

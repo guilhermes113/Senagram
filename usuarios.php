@@ -25,7 +25,7 @@ $Usuario = new Usuario();
         <!-- /MENU -->
         <!-- CONTEUDO -->
         <div>
-            <h1> USUÁRIOS - <a class="btn btn-primary" href="<?php echo URL?>cadastrar-usuarious.php">Novo</a></h1>
+            <h1> USUÁRIOS - <a class="btn btn-primary" href="<?php echo URL ?>cadastrar-usuarious.php">Novo</a></h1>
 
             <table class="table table-striped">
                 <thead>
@@ -42,7 +42,12 @@ $Usuario = new Usuario();
                     foreach ($usuarios as $usuario) {
                     ?>
                         <tr>
-                            <td></td>
+                            <td>
+                                <a href="<?php echo URL?>atualizar-usuario.php?id=<?php echo $usuario->id_usuario;?>">Editar</a>
+                                <a href="<?php echo URL?>deletar-usuario.php?id=<?php echo $usuario->id_usuario;?>">Ver</a>
+
+
+                            </td>
                             <td>
                                 <?php echo $usuario->id_usuario; ?>
                             </td>
