@@ -11,6 +11,7 @@
     <?php require_once('inc/css.php'); ?>
     <!-- js -->
     <?php require_once('inc/js.php'); ?>
+    
 </head>
 
 <body>

@@ -1,6 +1,6 @@
-<?php require_once('inc/classes.php'); include_once('class/Conexao.php'); 
-      $Usuario = new Usuario();
-      print_r($Usuario->listar());
+<?php require_once('inc/classes.php');
+include_once('class/Conexao.php');
+$Usuario = new Usuario();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -18,24 +18,53 @@
 
 <body>
     <div class="container">
-        <!-- Menu -->
+        <!-- MENU -->
+        <?php
+        require_once('inc/menu.php');
+        ?>
+        <!-- /MENU -->
+        <!-- CONTEUDO -->
         <div>
-            <?php include('inc/menu.php'); ?>
-        </div>
-        <!--/Menu -->
-        <!-- Conteudo-->
-        <div>
-            <div class="col-md-8">
-                <h1>Usuário</h1>
-            </div>
-            <div>
+            <h1> USUÁRIOS - <a class="btn btn-primary" href="<?php echo URL?>cadastrar-usuarious.php">Novo</a></h1>
 
-            </div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Ações</th>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>E-mail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    $usuarios = $Usuario->listar();
+                    foreach ($usuarios as $usuario) {
+                    ?>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <?php echo $usuario->id_usuario; ?>
+                            </td>
+                            <td>
+                                <?php echo $usuario->nome; ?>
+                            </td>
+                            <td>
+                                <?php echo $usuario->email; ?>
+                            </td>
+                        </tr>
+                    <?php
+                    } // fecha o foreach
+                    ?>
+                </tbody>
+            </table>
         </div>
-        <!--/Conteudo -->
-        <!-- rodape -->
-        <?php include_once('inc/rodape.php'); ?>
-        <!-- /rodape -->
+        <!-- /CONTEUDO -->
+        <!-- RODAPE -->
+        <?php
+        include_once('inc/rodape.php');
+        ?>
+        <!-- /RODAPE -->
     </div>
 </body>
 
