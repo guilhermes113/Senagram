@@ -43,10 +43,10 @@ $Usuario = new Usuario();
                     ?>
                         <tr>
                             <td>
-                                <a href="<?php echo URL?>atualizar-usuario.php?id=<?php echo $usuario->id_usuario;?>">Editar</a>
-                                <a href="<?php echo URL?>deletar-usuario.php?id=<?php echo $usuario->id_usuario;?>">Ver</a>
-
-
+                                
+                                <a href="<?php echo URL ?>atualizar-usuario.php?id=<?php echo $usuario->id_usuario; ?>">Editar</a>
+                                <a href="<?php echo URL ?>detalhes-usuario.php?id=<?php echo $usuario->id_usuario; ?>">Ver</a>
+                                <a href="<?php echo URL ?>deletar-usuario.php?id=<?php echo $usuario->id_usuario; ?>">Deletar</a>
                             </td>
                             <td>
                                 <?php echo $usuario->id_usuario; ?>
@@ -71,6 +71,8 @@ $Usuario = new Usuario();
         ?>
         <!-- /RODAPE -->
     </div>
+    
 </body>
+
 
 </html>
